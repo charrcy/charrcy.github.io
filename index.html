@@ -16,24 +16,31 @@
     <header>
       <div class="container">
         <h1>Charles&#39; Life Adventures </h1>
-        <h2>programming, life, personal, everything else</h2>
+        <h2>programming, life, personal, and everything else</h2>
 
-        <section id="downloads">
-          <a href="https://github.com/charrcy" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
+        
       </div>
     </header>
 
     <div class="container">
       <section id="main_content">
         <h3>
-<a id="welcome-to-charles-adewoyes-blog-pages" class="anchor" href="#welcome-to-charles-adewoyes-blog-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to Charles Adewoye's Blog Pages.</h3>
+<a id="welcome-to-charles-adewoyes-blog-pages" class="anchor" href="#welcome-to-charles-adewoyes-blog-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>ASP.Net WebAPI Development on Mac</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>This is an attempt to run my codes on a Mac</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<pre><code>
+public class CustomContentNegotiator : IContentNegotiator
+{
+	public ContentNegotiationResult Negotiate(Type type, HttpRequestMessage request, IEnumerable<MediaTypeFormatter> formatters)
+	{
+		if (request.RequestUri.Scheme == Uri.UriSchemeHttps)
+		{
+				return new ContentNegotiationResult(new JsonMediaTypeFormatter(), new MediaTypeHeaderValue("application/json"));
+		}
+		return new DefaultContentNegotiator().Negotiate(type, request, formatters);            
+	}
+}
 </code></pre>
 
 <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
